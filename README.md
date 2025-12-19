@@ -40,7 +40,6 @@
             margin: 0 auto;
         }
 
-        /* Заголовок */
         header {
             text-align: center;
             margin-bottom: 30px;
@@ -65,7 +64,6 @@
             font-size: 1.1rem;
         }
 
-        /* Вкладки */
         .tab-button-container {
             display: flex;
             gap: 10px;
@@ -105,7 +103,6 @@
             box-shadow: 0 4px 15px rgba(18, 193, 217, 0.3);
         }
 
-        /* Контент вкладок */
         .tab-content {
             display: none;
             background: white;
@@ -123,10 +120,8 @@
             border-bottom: 2px solid var(--light-gray);
         }
 
-        /* Формы */
         .form-group {
             margin-bottom: 20px;
-            max-width: 500px;
         }
 
         label {
@@ -157,7 +152,6 @@
             resize: vertical;
         }
 
-        /* Кнопки */
         .btn {
             padding: 14px 28px;
             background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
@@ -188,7 +182,6 @@
             font-size: 14px;
         }
 
-        /* Списки */
         ul {
             list-style: none;
             margin-top: 20px;
@@ -211,7 +204,6 @@
             box-shadow: var(--box-shadow);
         }
 
-        /* Переключение вида */
         .view-toggle {
             display: flex;
             gap: 10px;
@@ -239,7 +231,6 @@
             border-color: transparent;
         }
 
-        /* Календарь */
         .calendar-container {
             background: white;
             padding: 25px;
@@ -309,7 +300,6 @@
             z-index: 1;
         }
 
-        /* Индикаторы типа задачи в календаре */
         .task-type-indicator {
             position: absolute;
             top: 5px;
@@ -339,7 +329,6 @@
             background-color: var(--sick-color);
         }
 
-        /* Индикатор наработанного времени */
         .hours-indicator {
             height: 4px;
             background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
@@ -359,7 +348,6 @@
             border-radius: 50%;
         }
 
-        /* Детали дня */
         .day-details {
             background: white;
             padding: 25px;
@@ -443,7 +431,6 @@
             color: var(--sick-color);
         }
 
-        /* Таблица */
         .table-container {
             overflow-x: auto;
             border-radius: var(--border-radius);
@@ -480,7 +467,6 @@
             border-bottom: none;
         }
 
-        /* Фильтры */
         .filters {
             display: flex;
             gap: 20px;
@@ -497,7 +483,6 @@
             min-width: 200px;
         }
 
-        /* Статистика */
         .stats-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -530,7 +515,6 @@
             font-weight: 600;
         }
 
-        /* Итоговая статистика */
         .total-stats {
             display: flex;
             justify-content: space-between;
@@ -558,7 +542,6 @@
             opacity: 0.9;
         }
 
-        /* Модальное окно */
         .modal {
             display: none;
             position: fixed;
@@ -610,7 +593,6 @@
             color: var(--dark-color);
         }
 
-        /* Адаптивность */
         @media (max-width: 768px) {
             .tab-button-container {
                 flex-direction: column;
@@ -653,7 +635,6 @@
             }
         }
 
-        /* Анимации */
         @keyframes fadeIn {
             from { opacity: 0; transform: translateY(10px); }
             to { opacity: 1; transform: translateY(0); }
@@ -663,7 +644,6 @@
             animation: fadeIn 0.3s ease;
         }
 
-        /* Уведомления */
         .notification {
             position: fixed;
             top: 20px;
@@ -682,7 +662,6 @@
             transform: translateX(0);
         }
         
-        /* НОВЫЕ СТИЛИ ДЛЯ СИСТЕМЫ АВТОРИЗАЦИИ */
         .login-modal {
             position: fixed;
             top: 0;
@@ -829,14 +808,6 @@
             box-shadow: var(--box-shadow);
         }
         
-        /* Стиль для заблокированных вкладок */
-        .tab-button.disabled {
-            opacity: 0.5;
-            cursor: not-allowed;
-            pointer-events: none;
-        }
-        
-        /* Стиль для индикатора пользователя */
         .user-role-badge {
             background: var(--primary-color);
             color: white;
@@ -844,6 +815,64 @@
             border-radius: 12px;
             font-size: 0.8rem;
             margin-left: 8px;
+        }
+
+        .employee-card {
+            background: white;
+            padding: 20px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            margin-bottom: 15px;
+            border-left: 4px solid var(--primary-color);
+        }
+
+        .employee-info {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .employee-details {
+            flex: 1;
+        }
+
+        .employee-name {
+            font-weight: 600;
+            font-size: 1.1rem;
+            margin-bottom: 5px;
+        }
+
+        .employee-login {
+            color: var(--gray-color);
+            font-size: 0.9rem;
+        }
+
+        .employee-actions {
+            display: flex;
+            gap: 10px;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+
+        @media (max-width: 768px) {
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+            
+            .employee-info {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 15px;
+            }
+            
+            .employee-actions {
+                align-self: flex-end;
+            }
         }
     </style>
 </head>
@@ -875,13 +904,13 @@
             <div class="login-form">
                 <div class="form-group">
                     <label for="login-username">Логин</label>
-                    <input type="text" id="login-username" placeholder="Введите логин" value="Freedombank">
+                    <input type="text" id="login-username" placeholder="Введите логин">
                 </div>
                 
                 <div class="form-group">
                     <label for="login-password">Пароль</label>
                     <div class="password-container">
-                        <input type="password" id="login-password" placeholder="Введите пароль" value="Freedom2026">
+                        <input type="password" id="login-password" placeholder="Введите пароль">
                         <button type="button" class="toggle-password" onclick="togglePassword()">👁️</button>
                     </div>
                 </div>
@@ -901,8 +930,11 @@
                 
                 <div style="margin-top: 20px; color: var(--gray-color); font-size: 0.9rem;">
                     <p><strong>Тестовые данные:</strong></p>
-                    <p>Логин: Freedombank</p>
-                    <p>Пароль: Freedom2026</p>
+                    <p><strong>Администратор:</strong></p>
+                    <p>Логин: admin | Пароль: admin123</p>
+                    <p style="margin-top: 10px;"><strong>Сотрудники:</strong></p>
+                    <p>Логин: ivanov | Пароль: ivanov123</p>
+                    <p>Логин: petrov | Пароль: petrov123</p>
                 </div>
             </div>
         </div>
@@ -919,31 +951,17 @@
 
     <div class="container" id="mainContainer" style="display: none;">
         <header>
-            <h1><svg width="155" height="47" class="BffLogo logo" viewBox="0 0 155 47" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M20.1671 47C20.1671 47 0 41.0173 0 11.3571V0H40.3342V11.3571C40.3342 39.9018 20.1671 47 20.1671 47Z" fill="#4FB84E"></path>
-              <path d="M31.8351 11.4585H15.5908V20.8889H31.8351V23.7282C31.8351 28.4941 30.4773 32.3474 23.3358 32.3474H15.5908V44.7692C18.2563 46.4423 20.1674 47 20.1674 47C20.1674 47 40.3345 39.9018 40.3345 11.3571V2.78857C40.3345 7.55449 38.2725 11.3571 31.8351 11.4585Z" fill="#055532"></path>
-              <path class="letter" d="M51.5488 27.9363H55.7231C57.9862 27.9363 59.5956 28.9503 59.5956 30.9276C59.5956 31.891 59.1429 32.8543 58.288 33.3613V33.412C59.5955 33.8176 60.0482 34.9837 60.0482 35.9978C60.0482 38.4821 57.9862 39.3947 55.7231 39.3947H51.5488V27.9363ZM55.7734 32.3473C56.4774 32.3473 56.7792 31.8403 56.7792 31.2826C56.7792 30.7755 56.4774 30.3192 55.7231 30.3192H54.3652V32.3473H55.7734ZM55.9745 36.9611C56.7792 36.9611 57.1815 36.4034 57.1815 35.7443C57.1815 35.0851 56.7792 34.5781 55.9745 34.5781H54.3149V36.9611H55.9745Z" fill="black"></path>
-              <path class="letter" d="M64.323 27.9363H67.2399L71.1124 39.344H68.2458L67.5417 36.9611H64.0212L63.3172 39.344H60.4505L64.323 27.9363ZM66.8879 34.7302L66.2341 32.4994C66.0329 31.7896 65.7815 30.522 65.7815 30.522H65.7312C65.7312 30.522 65.4797 31.7896 65.2786 32.4994L64.6248 34.7302H66.8879Z" fill="black"></path>
-              <path class="letter" d="M72.2188 27.9363H75.0352L78.1533 33.2599C78.6059 34.0204 79.1089 35.1865 79.1089 35.1865H79.1591C79.1591 35.1865 79.0083 33.9697 79.0083 33.2599V27.9363H81.7743V39.344H79.0083L75.8399 34.0204C75.3872 33.2599 74.8843 32.0938 74.8843 32.0938H74.834C74.834 32.0938 74.9849 33.3106 74.9849 34.0204V39.344H72.2188V27.9363Z" fill="black"></path>
-              <path class="letter" d="M86.9544 27.9363V32.3473H88.1111L90.4748 27.9363H93.4421L90.3743 33.412V33.4627L93.5929 39.3947H90.4748L88.0608 34.7809H86.9041V39.3947H84.1381V27.9363H86.9544Z" fill="black"></path>
-              <path class="letter" d="M51.5488 22.765V6.74344H61.3055V7.90957C61.3055 9.1264 60.3499 10.0897 59.1429 10.0897H55.4213V13.436H60.2493V14.5514C60.2493 15.7683 59.2435 16.7823 58.0365 16.7823H55.4213V22.7143H51.5488V22.765Z" fill="black"></path>
-              <path class="letter" d="M67.3905 13.9937H69.1004C69.7542 13.9937 70.2571 13.8416 70.6092 13.4867C70.9612 13.1318 71.1624 12.6755 71.1624 12.0164C71.1624 11.1544 70.8606 10.546 70.2068 10.2925C69.8548 10.1404 69.3519 10.0897 68.7484 10.0897H67.4408V13.9937H67.3905ZM63.4677 6.74344H68.9998C70.408 6.74344 71.4138 6.89555 72.0676 7.14905C72.9729 7.50396 73.7273 8.06167 74.2302 8.87289C74.7331 9.68411 74.9846 10.6474 74.9846 11.8136C74.9846 12.7262 74.7834 13.5881 74.3811 14.3993C73.9787 15.2105 73.3752 15.819 72.6208 16.2246V16.2753C72.7717 16.4781 72.9729 16.7823 73.2243 17.2386L76.2922 22.8664H72.0173L69.201 17.4414H67.3905V22.8664H63.4677V6.74344Z" fill="black"></path>
-              <path class="letter" d="M78.1027 22.765V6.74344H88.1108V10.0897H82.0254V13.0304H86.8535V16.3767H82.0254V19.4187H88.4125V22.765H78.1027Z" fill="black"></path>
-              <path class="letter" d="M90.8771 22.765V6.74344H100.835V10.0897H94.7999V13.0304H99.6279V16.3767H94.7999V19.4187H101.187V22.765H90.8771Z" fill="black"></path>
-              <path class="letter" d="M107.524 19.4187H109.133C110.491 19.4187 111.547 19.0131 112.301 18.2019C113.056 17.3907 113.458 16.2246 113.458 14.7035C113.458 13.2332 113.056 12.0671 112.301 11.2558C111.547 10.4446 110.491 10.0897 109.133 10.0897H107.524V19.4187ZM103.651 22.765V6.74344H109.284C111.798 6.74344 113.81 7.45326 115.269 8.87289C116.727 10.2925 117.481 12.2192 117.481 14.7542C117.481 17.2893 116.727 19.2159 115.269 20.6356C113.81 22.0552 111.798 22.765 109.284 22.765H103.651Z" fill="black"></path>
-              <path class="letter" d="M123.215 14.6531C123.215 16.0221 123.617 17.1882 124.422 18.1008C125.226 19.0134 126.283 19.4697 127.49 19.4697C128.747 19.4697 129.753 19.0134 130.557 18.1008C131.362 17.1882 131.764 16.0221 131.764 14.6531C131.764 13.3349 131.362 12.2195 130.557 11.3575C129.753 10.4956 128.747 10.0393 127.49 10.0393C126.232 10.0393 125.226 10.4956 124.422 11.3575C123.617 12.2195 123.215 13.3349 123.215 14.6531ZM119.191 14.6531C119.191 12.3209 119.946 10.3942 121.505 8.82249C123.064 7.25075 125.076 6.49023 127.49 6.49023C129.904 6.49023 131.915 7.25075 133.474 8.82249C135.033 10.3942 135.788 12.3209 135.788 14.6531C135.788 17.0361 135.033 19.0641 133.474 20.6359C131.915 22.2583 129.904 23.0188 127.49 23.0188C125.076 23.0188 123.064 22.2076 121.505 20.6359C119.946 19.0134 119.191 17.0361 119.191 14.6531Z" fill="black"></path>
-              <path class="letter" d="M137.648 22.765L138.956 6.74344H143.181L145.494 13.5374L146.299 16.1739H146.349C146.651 15.1091 146.902 14.1965 147.154 13.5374L149.467 6.74344H153.692L154.999 22.765H151.127L150.624 15.5654C150.573 15.2105 150.573 14.8049 150.573 14.3486C150.573 13.8923 150.573 13.5374 150.573 13.2839V12.8783H150.523C150.171 13.9937 149.869 14.9063 149.618 15.5654L147.958 20.23H144.639L142.979 15.5654L142.074 12.8783H142.024C142.074 13.8416 142.074 14.7542 142.024 15.5654L141.521 22.765H137.648Z" fill="black"></path>
-            </svg> </h1>
+            <h1>Task Dashboard</h1>
             <p class="subtitle">Система управления задачами и временем</p>
         </header>
 
-        <!-- Вкладки -->
-        <div class="tab-button-container">
+        <!-- Вкладки (только для администратора) -->
+        <div id="adminTabs" class="tab-button-container" style="display: none;">
             <button class="tab-button active" onclick="showTab('task-themes')">
                 <span>🎯</span> Темы задач
             </button>
-            <button class="tab-button" onclick="showTab('responsible-section')">
-                <span>👥</span> Ответственные
+            <button class="tab-button" onclick="showTab('employees-section')">
+                <span>👥</span> Сотрудники
             </button>
             <button class="tab-button" onclick="showTab('add-task')">
                 <span>➕</span> Добавить задачу
@@ -957,7 +975,7 @@
         </div>
 
         <!-- Упрощенный вид для сотрудника -->
-        <div id="employeeView" class="employee-view">
+        <div id="employeeView" class="employee-view" style="display: none;">
             <div class="simplified-form">
                 <h2 style="text-align: center; margin-bottom: 30px;">📝 Добавление задачи</h2>
                 
@@ -1015,8 +1033,8 @@
             </div>
         </div>
 
-        <!-- Вкладка "Темы задач" -->
-        <div id="task-themes" class="tab-content" style="display: block;">
+        <!-- Вкладка "Темы задач" (только для админа) -->
+        <div id="task-themes" class="tab-content" style="display: none;">
             <h2>Темы задач</h2>
             <div class="form-group">
                 <label for="new-task-theme">Название темы задачи:</label>
@@ -1032,25 +1050,51 @@
             </ul>
         </div>
 
-        <!-- Вкладка "Ответственные" -->
-        <div id="responsible-section" class="tab-content">
-            <h2>Ответственные</h2>
-            <div class="form-group">
-                <label for="new-responsible">Имя ответственного:</label>
-                <input type="text" id="new-responsible" name="new-responsible" placeholder="Введите имя...">
+        <!-- Вкладка "Сотрудники" (только для админа) -->
+        <div id="employees-section" class="tab-content" style="display: none;">
+            <h2>Управление сотрудниками</h2>
+            
+            <div style="background: var(--light-color); padding: 25px; border-radius: var(--border-radius); margin-bottom: 30px;">
+                <h3 style="margin-bottom: 20px;">Добавить нового сотрудника</h3>
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="new-employee-fio">ФИО сотрудника:</label>
+                        <input type="text" id="new-employee-fio" name="new-employee-fio" placeholder="Иванов Иван Иванович">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="new-employee-login">Логин:</label>
+                        <input type="text" id="new-employee-login" name="new-employee-login" placeholder="ivanov">
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="new-employee-password">Пароль:</label>
+                    <input type="password" id="new-employee-password" name="new-employee-password" placeholder="Введите пароль">
+                </div>
+                
+                <div class="form-group">
+                    <label for="new-employee-role">Роль:</label>
+                    <select id="new-employee-role" name="new-employee-role">
+                        <option value="employee">Сотрудник</option>
+                        <option value="admin">Администратор</option>
+                    </select>
+                </div>
+                
+                <button class="btn" onclick="addEmployee()">
+                    <span>👥</span> Добавить сотрудника
+                </button>
             </div>
-            <button class="btn" onclick="addResponsible()">
-                <span>👥</span> Добавить ответственного
-            </button>
 
-            <h3 style="margin-top: 30px;">Список ответственных:</h3>
-            <ul id="responsible-list">
-                <!-- Ответственные будут добавляться динамически -->
-            </ul>
+            <h3 style="margin-top: 30px;">Список сотрудников:</h3>
+            <div id="employees-list">
+                <!-- Сотрудники будут добавляться динамически -->
+            </div>
         </div>
 
-        <!-- Вкладка "Добавить задачу" -->
-        <div id="add-task" class="tab-content">
+        <!-- Вкладка "Добавить задачу" (для админа) -->
+        <div id="add-task" class="tab-content" style="display: none;">
             <h2>Добавить задачу</h2>
             <div class="form-group">
                 <label for="task-name">Тема задачи:</label>
@@ -1103,8 +1147,8 @@
             </button>
         </div>
 
-        <!-- Вкладка "Список задач" -->
-        <div id="task-list" class="tab-content">
+        <!-- Вкладка "Список задач" (только для админа) -->
+        <div id="task-list" class="tab-content" style="display: none;">
             <h2>Список задач</h2>
             
             <!-- Фильтры для списка задач -->
@@ -1209,8 +1253,8 @@
             </div>
         </div>
 
-        <!-- Вкладка "Дэшборд" -->
-        <div id="dashboard" class="tab-content">
+        <!-- Вкладка "Дэшборд" (только для админа) -->
+        <div id="dashboard" class="tab-content" style="display: none;">
             <h2>Дэшборд по отработанным часам</h2>
             
             <div class="filters">
@@ -1307,46 +1351,102 @@
         </div>
     </div>
 
+    <!-- Модальное окно для редактирования сотрудника -->
+    <div id="edit-employee-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Редактировать сотрудника</h3>
+                <button class="modal-close" onclick="closeEditEmployeeModal()">×</button>
+            </div>
+            <div id="edit-employee-form">
+                <!-- Форма будет заполняться динамически -->
+            </div>
+        </div>
+    </div>
+
     <!-- Уведомление -->
     <div id="notification" class="notification"></div>
 
     <script>
         // Данные
-        let taskThemes = [];
-        let responsibles = [];
+        let taskThemes = ['Разработка', 'Тестирование', 'Документация', 'Встречи', 'Обучение'];
         let taskList = [];
         let selectedDate = null;
         let viewMode = 'calendar';
-        let currentUser = null; // {username, role, name}
+        let currentUser = null;
+        let employees = [];
 
-        // Определяем пользователей
-        const USERS = {
-            'Freedombank': {
-                password: 'Freedom2026',
+        // Изначальные пользователи
+        const INITIAL_USERS = {
+            'admin': {
+                password: 'admin123',
                 name: 'Администратор системы',
-                role: 'editor' // 'employee' или 'editor'
+                role: 'admin',
+                fio: 'Администратор системы'
             },
-            'employee1': {
-                password: 'employee123',
-                name: 'Иван Иванов',
-                role: 'employee'
+            'ivanov': {
+                password: 'ivanov123',
+                name: 'Иванов Иван Иванович',
+                role: 'employee',
+                fio: 'Иванов Иван Иванович'
             },
-            'employee2': {
-                password: 'employee456',
-                name: 'Петр Петров',
-                role: 'employee'
-            },
-            'manager': {
-                password: 'manager123',
-                name: 'Анна Сидорова',
-                role: 'editor' // менеджеру даем права редактора для просмотра всего
+            'petrov': {
+                password: 'petrov123',
+                name: 'Петров Петр Петрович',
+                role: 'employee',
+                fio: 'Петров Петр Петрович'
             }
         };
 
         // Инициализация
         document.addEventListener('DOMContentLoaded', function() {
-            // Проверяем, есть ли сохраненная сессия
             checkSavedSession();
+            loadData();
+            
+            // Инициализируем начальные данные, если их нет
+            if (!localStorage.getItem('taskDashboard_tasks')) {
+                // Создаем несколько тестовых задач
+                const now = new Date();
+                const yesterday = new Date(now);
+                yesterday.setDate(yesterday.getDate() - 1);
+                
+                taskList = [
+                    {
+                        taskName: 'Разработка',
+                        responsible: 'Иванов Иван Иванович',
+                        subtaskName: 'Создание интерфейса',
+                        comment: 'Работа над UI компонентами',
+                        taskType: 'проект',
+                        startTime: yesterday.toLocaleString('ru-RU'),
+                        endTime: new Date(yesterday.getTime() + 4 * 60 * 60 * 1000).toLocaleString('ru-RU'),
+                        timeSpent: 240,
+                        hoursSpent: '4.00',
+                        date: yesterday.toISOString().split('T')[0],
+                        month: yesterday.getMonth(),
+                        year: yesterday.getFullYear(),
+                        week: getWeekNumber(yesterday),
+                        timestamp: yesterday.getTime()
+                    },
+                    {
+                        taskName: 'Тестирование',
+                        responsible: 'Петров Петр Петрович',
+                        subtaskName: 'Проверка функционала',
+                        comment: 'Тестирование новых фич',
+                        taskType: 'рутина',
+                        startTime: now.toLocaleString('ru-RU'),
+                        endTime: new Date(now.getTime() + 2 * 60 * 60 * 1000).toLocaleString('ru-RU'),
+                        timeSpent: 120,
+                        hoursSpent: '2.00',
+                        date: now.toISOString().split('T')[0],
+                        month: now.getMonth(),
+                        year: now.getFullYear(),
+                        week: getWeekNumber(now),
+                        timestamp: now.getTime()
+                    }
+                ];
+                
+                saveData();
+            }
         });
 
         // Функции для работы с авторизацией
@@ -1356,7 +1456,6 @@
                 try {
                     const session = JSON.parse(savedSession);
                     if (session.username && session.role && session.name) {
-                        // Проверяем, не истекла ли сессия
                         if (session.expires && new Date(session.expires) > new Date()) {
                             currentUser = session;
                             showMainInterface();
@@ -1367,8 +1466,6 @@
                     console.error('Ошибка восстановления сессии:', e);
                 }
             }
-            
-            // Если нет сохраненной сессии, показываем окно входа
             showLoginModal();
         }
 
@@ -1383,13 +1480,7 @@
             document.getElementById('mainContainer').style.display = 'block';
             document.getElementById('currentUserIndicator').style.display = 'flex';
             
-            // Обновляем информацию о пользователе
             updateUserInfo();
-            
-            // Загружаем данные из localStorage
-            loadData();
-            
-            // Обновляем интерфейс в зависимости от роли
             updateInterfaceForRole();
         }
 
@@ -1412,62 +1503,68 @@
             const rememberMe = document.getElementById('remember-me').checked;
             const errorElement = document.getElementById('login-error');
             
-            // Сбрасываем ошибку
             errorElement.classList.remove('show');
             
-            // Проверяем учетные данные
             if (!username || !password) {
                 errorElement.textContent = 'Введите логин и пароль';
                 errorElement.classList.add('show');
                 return;
             }
             
-            if (!USERS[username]) {
-                errorElement.textContent = 'Пользователь не найден';
-                errorElement.classList.add('show');
-                return;
+            // Проверяем вначале инициальных пользователей
+            if (INITIAL_USERS[username]) {
+                if (INITIAL_USERS[username].password !== password) {
+                    errorElement.textContent = 'Неверный пароль';
+                    errorElement.classList.add('show');
+                    return;
+                }
+                
+                currentUser = {
+                    username: username,
+                    name: INITIAL_USERS[username].name,
+                    fio: INITIAL_USERS[username].fio,
+                    role: INITIAL_USERS[username].role
+                };
+            } else {
+                // Проверяем в добавленных сотрудниках
+                const employee = employees.find(emp => emp.login === username);
+                if (!employee) {
+                    errorElement.textContent = 'Пользователь не найден';
+                    errorElement.classList.add('show');
+                    return;
+                }
+                
+                if (employee.password !== password) {
+                    errorElement.textContent = 'Неверный пароль';
+                    errorElement.classList.add('show');
+                    return;
+                }
+                
+                currentUser = {
+                    username: employee.login,
+                    name: employee.fio,
+                    fio: employee.fio,
+                    role: employee.role
+                };
             }
             
-            if (USERS[username].password !== password) {
-                errorElement.textContent = 'Неверный пароль';
-                errorElement.classList.add('show');
-                return;
-            }
-            
-            // Авторизация успешна
-            currentUser = {
-                username: username,
-                name: USERS[username].name,
-                role: USERS[username].role
-            };
-            
-            // Если выбрано "Запомнить меня", сохраняем сессию
             if (rememberMe) {
                 const session = {
                     ...currentUser,
-                    expires: new Date(Date.now() + 30 * 24 * 60 * 60 * 1000) // 30 дней
+                    expires: new Date(Date.now() + 30 * 24 * 60 * 60 * 1000)
                 };
                 localStorage.setItem('taskDashboard_session', JSON.stringify(session));
             }
             
-            // Показываем основной интерфейс
             showMainInterface();
-            
-            // Показываем приветственное сообщение
-            showNotification(`Добро пожаловать, ${currentUser.name}!`);
+            showNotification(`Добро пожаловать, ${currentUser.fio}!`);
         }
 
         function logout() {
             if (confirm('Вы уверены, что хотите выйти из системы?')) {
-                // Удаляем сохраненную сессию
                 localStorage.removeItem('taskDashboard_session');
-                
-                // Сбрасываем текущего пользователя
                 currentUser = null;
-                
-                // Показываем окно входа
                 showLoginModal();
-                
                 showNotification('Вы вышли из системы');
             }
         }
@@ -1478,15 +1575,14 @@
             const userNameElement = document.getElementById('currentUserName');
             const userRoleElement = document.getElementById('currentUserRole');
             
-            userNameElement.textContent = currentUser.name;
+            userNameElement.textContent = currentUser.fio;
             
-            // Устанавливаем текст и цвет для роли
             let roleText = '';
             let roleColor = '';
             
             switch(currentUser.role) {
-                case 'editor':
-                    roleText = 'Редактор';
+                case 'admin':
+                    roleText = 'Администратор';
                     roleColor = '#6C63FF';
                     break;
                 case 'employee':
@@ -1500,53 +1596,358 @@
         }
 
         function updateInterfaceForRole() {
+            const adminTabs = document.getElementById('adminTabs');
             const employeeView = document.getElementById('employeeView');
             const tabContents = document.querySelectorAll('.tab-content');
-            const tabButtons = document.querySelectorAll('.tab-button');
             
-            // Скрываем все содержимое вкладок
+            // Скрываем все
+            adminTabs.style.display = 'none';
+            employeeView.style.display = 'none';
             tabContents.forEach(tab => {
                 tab.style.display = 'none';
             });
             
-            // Скрываем вид сотрудника
-            employeeView.classList.remove('active');
-            
-            // В зависимости от роли показываем разные вкладки
-            if (currentUser.role === 'employee') {
-                // Показываем упрощенную форму для сотрудника
-                employeeView.classList.add('active');
-                
-                // Скрываем все вкладки
-                document.querySelector('.tab-button-container').style.display = 'none';
-                
-                // Обновляем интерфейс сотрудника
-                updateEmployeeInterface();
-            } else {
-                // Редактор видит все вкладки
-                document.querySelector('.tab-button-container').style.display = 'flex';
-                
-                // Разблокируем все вкладки
-                tabButtons.forEach(btn => btn.classList.remove('disabled'));
-                
-                // Показываем первую вкладку
+            if (currentUser.role === 'admin') {
+                // Администратор видит все вкладки
+                adminTabs.style.display = 'flex';
                 showTab('task-themes');
+                updateTaskTable(); // ОБНОВЛЯЕМ ТАБЛИЦУ ЗАДАЧ
+            } else if (currentUser.role === 'employee') {
+                // Сотрудник видит только форму добавления задач
+                employeeView.style.display = 'block';
+                updateEmployeeInterface();
+            }
+        }
+
+        // Сохранение данных
+        function saveData() {
+            try {
+                localStorage.setItem('taskDashboard_themes', JSON.stringify(taskThemes));
+                localStorage.setItem('taskDashboard_tasks', JSON.stringify(taskList));
+                localStorage.setItem('taskDashboard_employees', JSON.stringify(employees));
+            } catch (e) {
+                console.error('Ошибка сохранения данных:', e);
+            }
+        }
+
+        // Загрузка данных
+        function loadData() {
+            try {
+                const savedThemes = localStorage.getItem('taskDashboard_themes');
+                const savedTasks = localStorage.getItem('taskDashboard_tasks');
+                const savedEmployees = localStorage.getItem('taskDashboard_employees');
+                
+                if (savedThemes) taskThemes = JSON.parse(savedThemes);
+                if (savedTasks) taskList = JSON.parse(savedTasks);
+                if (savedEmployees) employees = JSON.parse(savedEmployees);
+            } catch (e) {
+                console.error('Ошибка загрузки данных:', e);
+            }
+        }
+
+        // Функции для администратора
+        function showTab(tabId) {
+            if (currentUser.role !== 'admin') {
+                showNotification('Доступ запрещен', 'error');
+                return;
             }
             
-            // Обновляем интерфейс
-            updateTaskThemesList();
-            updateResponsibleList();
-            updateTaskSelect();
+            document.querySelectorAll('.tab-content').forEach(tab => {
+                tab.style.display = 'none';
+            });
+            
+            document.getElementById(tabId).style.display = 'block';
+            
+            document.querySelectorAll('.tab-button').forEach(button => {
+                button.classList.remove('active');
+            });
+            
+            const tabButtons = document.querySelectorAll('.tab-button');
+            tabButtons.forEach(button => {
+                if (button.textContent.includes(tabId === 'task-themes' ? 'Темы задач' :
+                                               tabId === 'employees-section' ? 'Сотрудники' :
+                                               tabId === 'add-task' ? 'Добавить задачу' :
+                                               tabId === 'task-list' ? 'Список задач' : 'Дэшборд')) {
+                    button.classList.add('active');
+                }
+            });
+            
+            if (tabId === 'dashboard') {
+                updateDashboard();
+            } else if (tabId === 'employees-section') {
+                updateEmployeesList();
+            } else if (tabId === 'task-list') {
+                updateTaskTable(); // ОБНОВЛЯЕМ ТАБЛИЦУ ПРИ ПЕРЕКЛЮЧЕНИИ НА ВКЛАДКУ
+            }
+        }
+
+        // Управление сотрудниками
+        function addEmployee() {
+            if (currentUser.role !== 'admin') {
+                showNotification('Недостаточно прав', 'error');
+                return;
+            }
+            
+            const fio = document.getElementById('new-employee-fio').value.trim();
+            const login = document.getElementById('new-employee-login').value.trim();
+            const password = document.getElementById('new-employee-password').value;
+            const role = document.getElementById('new-employee-role').value;
+            
+            if (!fio || !login || !password) {
+                showNotification('Заполните все поля!', 'error');
+                return;
+            }
+            
+            // Проверяем уникальность логина
+            if (INITIAL_USERS[login]) {
+                showNotification('Такой логин уже существует!', 'error');
+                return;
+            }
+            
+            if (employees.some(emp => emp.login === login)) {
+                showNotification('Такой логин уже существует!', 'error');
+                return;
+            }
+            
+            const newEmployee = {
+                id: Date.now(),
+                fio: fio,
+                login: login,
+                password: password,
+                role: role,
+                created: new Date().toISOString()
+            };
+            
+            employees.push(newEmployee);
+            saveData();
+            
+            // Очищаем форму
+            document.getElementById('new-employee-fio').value = '';
+            document.getElementById('new-employee-login').value = '';
+            document.getElementById('new-employee-password').value = '';
+            
+            updateEmployeesList();
             updateResponsibleSelect();
-            updateTaskListFilters();
             updateResponsibleFilter();
-            updateTaskTable();
-            updateDashboard();
+            updateTaskListFilters();
+            
+            showNotification('Сотрудник успешно добавлен!');
+        }
+
+        function updateEmployeesList() {
+            const container = document.getElementById('employees-list');
+            container.innerHTML = '';
+            
+            // Создаем массив всех пользователей (инициальные + добавленные)
+            const allUsers = [...employees];
+            
+            // Добавляем инициальных пользователей (кроме текущего админа)
+            Object.keys(INITIAL_USERS).forEach(key => {
+                if (key !== 'admin') { // Не показываем системного админа в списке
+                    const user = INITIAL_USERS[key];
+                    allUsers.push({
+                        id: key,
+                        fio: user.fio,
+                        login: key,
+                        password: user.password,
+                        role: user.role,
+                        isInitial: true
+                    });
+                }
+            });
+            
+            if (allUsers.length === 0) {
+                container.innerHTML = '<p style="color: var(--gray-color); text-align: center;">Нет добавленных сотрудников</p>';
+                return;
+            }
+            
+            allUsers.sort((a, b) => a.fio.localeCompare(b.fio));
+            
+            allUsers.forEach(employee => {
+                const employeeCard = document.createElement('div');
+                employeeCard.className = 'employee-card';
+                
+                const roleText = employee.role === 'admin' ? 'Администратор' : 'Сотрудник';
+                const roleColor = employee.role === 'admin' ? '#6C63FF' : '#12C1D9';
+                
+                employeeCard.innerHTML = `
+                    <div class="employee-info">
+                        <div class="employee-details">
+                            <div class="employee-name">${employee.fio}</div>
+                            <div class="employee-login">Логин: <strong>${employee.login}</strong></div>
+                            <div style="margin-top: 5px;">
+                                <span style="background: ${roleColor}; color: white; padding: 2px 8px; border-radius: 12px; font-size: 0.8rem;">
+                                    ${roleText}
+                                </span>
+                                ${employee.isInitial ? '<span style="margin-left: 10px; color: var(--gray-color); font-size: 0.8rem;">(Системный)</span>' : ''}
+                            </div>
+                        </div>
+                        <div class="employee-actions">
+                            ${!employee.isInitial ? `
+                                <button class="btn btn-small" onclick="editEmployee(${employee.id})">
+                                    ✏️ Редактировать
+                                </button>
+                                <button class="btn btn-small" onclick="deleteEmployee(${employee.id})" style="background: #FF6B6B;">
+                                    🗑️ Удалить
+                                </button>
+                            ` : ''}
+                        </div>
+                    </div>
+                `;
+                
+                container.appendChild(employeeCard);
+            });
+        }
+
+        function editEmployee(employeeId) {
+            const employee = employees.find(emp => emp.id === employeeId);
+            if (!employee) return;
+            
+            const modal = document.getElementById('edit-employee-modal');
+            const form = document.getElementById('edit-employee-form');
+            
+            form.innerHTML = `
+                <div class="form-group">
+                    <label for="edit-employee-fio">ФИО сотрудника:</label>
+                    <input type="text" id="edit-employee-fio" value="${employee.fio}" placeholder="Иванов Иван Иванович">
+                </div>
+                
+                <div class="form-group">
+                    <label for="edit-employee-login">Логин:</label>
+                    <input type="text" id="edit-employee-login" value="${employee.login}" placeholder="ivanov" readonly>
+                    <small style="color: var(--gray-color);">Логин нельзя изменить</small>
+                </div>
+                
+                <div class="form-group">
+                    <label for="edit-employee-password">Новый пароль (оставьте пустым, чтобы не менять):</label>
+                    <input type="password" id="edit-employee-password" placeholder="Введите новый пароль">
+                </div>
+                
+                <div class="form-group">
+                    <label for="edit-employee-role">Роль:</label>
+                    <select id="edit-employee-role">
+                        <option value="employee" ${employee.role === 'employee' ? 'selected' : ''}>Сотрудник</option>
+                        <option value="admin" ${employee.role === 'admin' ? 'selected' : ''}>Администратор</option>
+                    </select>
+                </div>
+                
+                <div style="display: flex; gap: 10px; margin-top: 20px;">
+                    <button class="btn" onclick="saveEmployeeChanges(${employeeId})" style="flex: 1;">
+                        💾 Сохранить изменения
+                    </button>
+                    <button class="btn btn-secondary" onclick="closeEditEmployeeModal()" style="flex: 1;">
+                        ❌ Отмена
+                    </button>
+                </div>
+            `;
+            
+            modal.classList.add('active');
+        }
+
+        function saveEmployeeChanges(employeeId) {
+            const employeeIndex = employees.findIndex(emp => emp.id === employeeId);
+            if (employeeIndex === -1) return;
+            
+            const fio = document.getElementById('edit-employee-fio').value.trim();
+            const password = document.getElementById('edit-employee-password').value;
+            const role = document.getElementById('edit-employee-role').value;
+            
+            if (!fio) {
+                showNotification('Введите ФИО сотрудника!', 'error');
+                return;
+            }
+            
+            employees[employeeIndex].fio = fio;
+            employees[employeeIndex].role = role;
+            
+            if (password) {
+                employees[employeeIndex].password = password;
+            }
+            
+            saveData();
+            updateEmployeesList();
+            updateResponsibleSelect();
+            updateResponsibleFilter();
+            updateTaskListFilters();
+            
+            closeEditEmployeeModal();
+            showNotification('Изменения сохранены!');
+        }
+
+        function deleteEmployee(employeeId) {
+            if (!confirm('Вы уверены, что хотите удалить этого сотрудника?')) return;
+            
+            const employeeIndex = employees.findIndex(emp => emp.id === employeeId);
+            if (employeeIndex === -1) return;
+            
+            employees.splice(employeeIndex, 1);
+            saveData();
+            updateEmployeesList();
+            updateResponsibleSelect();
+            updateResponsibleFilter();
+            updateTaskListFilters();
+            
+            showNotification('Сотрудник удален');
+        }
+
+        function closeEditEmployeeModal() {
+            document.getElementById('edit-employee-modal').classList.remove('active');
+        }
+
+        // Обновленные функции для работы с ответственными
+        function updateResponsibleSelect() {
+            const select = document.getElementById('responsible-select');
+            select.innerHTML = '<option value="">Выберите ответственного</option>';
+            
+            // Добавляем инициальных пользователей (кроме админа)
+            Object.keys(INITIAL_USERS).forEach(key => {
+                if (key !== 'admin') {
+                    const user = INITIAL_USERS[key];
+                    const option = document.createElement('option');
+                    option.value = user.fio;
+                    option.textContent = user.fio;
+                    select.appendChild(option);
+                }
+            });
+            
+            // Добавляем сотрудников из базы
+            employees.forEach(employee => {
+                const option = document.createElement('option');
+                option.value = employee.fio;
+                option.textContent = employee.fio;
+                select.appendChild(option);
+            });
+        }
+
+        function updateResponsibleFilter() {
+            const select = document.getElementById('responsible-filter');
+            const currentValue = select.value;
+            select.innerHTML = '<option value="">Все сотрудники</option>';
+            
+            // Добавляем инициальных пользователей (кроме админа)
+            Object.keys(INITIAL_USERS).forEach(key => {
+                if (key !== 'admin') {
+                    const user = INITIAL_USERS[key];
+                    const option = document.createElement('option');
+                    option.value = user.fio;
+                    option.textContent = user.fio;
+                    select.appendChild(option);
+                }
+            });
+            
+            // Добавляем сотрудников из базы
+            employees.forEach(employee => {
+                const option = document.createElement('option');
+                option.value = employee.fio;
+                option.textContent = employee.fio;
+                select.appendChild(option);
+            });
+            
+            select.value = currentValue;
         }
 
         // Упрощенный интерфейс для сотрудника
         function updateEmployeeInterface() {
-            // Обновляем список тем задач
             const themeSelect = document.getElementById('employee-task-name');
             themeSelect.innerHTML = '<option value="">Выберите тему</option>';
             
@@ -1557,7 +1958,6 @@
                 themeSelect.appendChild(option);
             });
             
-            // Обновляем список последних задач сотрудника
             updateEmployeeTasksList();
         }
 
@@ -1565,11 +1965,10 @@
             const container = document.getElementById('employee-tasks-list');
             container.innerHTML = '';
             
-            // Получаем задачи текущего сотрудника, отсортированные по дате
             const employeeTasks = taskList
-                .filter(task => task.responsible === currentUser.name)
+                .filter(task => task.responsible === currentUser.fio)
                 .sort((a, b) => new Date(b.startTime) - new Date(a.startTime))
-                .slice(0, 10); // Показываем последние 10 задач
+                .slice(0, 10);
             
             if (employeeTasks.length === 0) {
                 container.innerHTML = '<p style="text-align: center; color: var(--gray-color);">У вас пока нет задач</p>';
@@ -1614,6 +2013,7 @@
             });
         }
 
+        // ФУНКЦИЯ ДОБАВЛЕНИЯ ЗАДАЧИ СОТРУДНИКОМ (ИСПРАВЛЕННАЯ)
         function addEmployeeTask() {
             const taskName = document.getElementById('employee-task-name').value;
             const subtaskName = document.getElementById('employee-subtask-name').value;
@@ -1622,7 +2022,6 @@
             const startTime = document.getElementById('employee-start-time').value;
             const endTime = document.getElementById('employee-end-time').value;
 
-            // Валидация
             if (!taskName || !startTime || !endTime) {
                 showNotification('Заполните все обязательные поля!', 'error');
                 return;
@@ -1636,11 +2035,11 @@
                 return;
             }
 
-            const timeSpent = Math.round((end - start) / 1000 / 60); // Время в минутах
+            const timeSpent = Math.round((end - start) / 1000 / 60);
 
             const task = {
                 taskName,
-                responsible: currentUser.name,
+                responsible: currentUser.fio,
                 subtaskName: subtaskName || '-',
                 comment: comment || '-',
                 taskType,
@@ -1652,53 +2051,112 @@
                 month: start.getMonth(),
                 year: start.getFullYear(),
                 week: getWeekNumber(start),
-                timestamp: start.getTime()
+                timestamp: Date.now() // УНИКАЛЬНЫЙ ИДЕНТИФИКАТОР
             };
 
             taskList.push(task);
             saveData();
             
-            // Очистка формы
             document.getElementById('employee-subtask-name').value = '';
             document.getElementById('employee-comment').value = '';
             document.getElementById('employee-start-time').value = '';
             document.getElementById('employee-end-time').value = '';
             
-            // Обновляем список задач
             updateEmployeeTasksList();
             
             showNotification('Задача успешно добавлена!');
         }
 
-        // Сохранение данных в localStorage
-        function saveData() {
-            try {
-                localStorage.setItem('taskDashboard_themes', JSON.stringify(taskThemes));
-                localStorage.setItem('taskDashboard_responsibles', JSON.stringify(responsibles));
-                localStorage.setItem('taskDashboard_tasks', JSON.stringify(taskList));
-            } catch (e) {
-                console.error('Ошибка сохранения данных:', e);
-            }
-        }
-
-        // Загрузка данных из localStorage
-        function loadData() {
-            try {
-                const savedThemes = localStorage.getItem('taskDashboard_themes');
-                const savedResponsibles = localStorage.getItem('taskDashboard_responsibles');
-                const savedTasks = localStorage.getItem('taskDashboard_tasks');
+        // ФУНКЦИЯ ОБНОВЛЕНИЯ ТАБЛИЦЫ ЗАДАЧ (ИСПРАВЛЕННАЯ)
+        function updateTaskTable() {
+            if (currentUser.role !== 'admin') return;
+            
+            const tbody = document.querySelector('#task-table tbody');
+            tbody.innerHTML = '';
+            
+            if (taskList.length === 0) {
+                tbody.innerHTML = `
+                    <tr>
+                        <td colspan="7" style="text-align: center; padding: 40px; color: var(--gray-color);">
+                            Нет добавленных задач
+                        </td>
+                    </tr>
+                `;
                 
-                if (savedThemes) taskThemes = JSON.parse(savedThemes);
-                if (savedResponsibles) responsibles = JSON.parse(savedResponsibles);
-                if (savedTasks) taskList = JSON.parse(savedTasks);
-            } catch (e) {
-                console.error('Ошибка загрузки данных:', e);
+                document.getElementById('task-list-counter').style.display = 'none';
+                document.getElementById('no-tasks-message').style.display = 'none';
+                
+                return;
             }
+            
+            document.getElementById('task-list-counter').style.display = 'flex';
+            
+            updateTaskListFilters();
+            
+            // Сортируем задачи по дате (новые сверху)
+            const tasksToShow = [...taskList].sort((a, b) => new Date(b.startTime) - new Date(a.startTime));
+            
+            tasksToShow.forEach(task => {
+                const row = document.createElement('tr');
+                
+                let typeIcon = '🚀';
+                let typeColor = '#6C63FF';
+                if (task.taskType === 'рутина') {
+                    typeIcon = '🔄';
+                    typeColor = '#12C1D9';
+                }
+                if (task.taskType === 'созвон') {
+                    typeIcon = '📞';
+                    typeColor = '#2CC93C';
+                }
+                if (task.taskType === 'отпуск') {
+                    typeIcon = '🏖️';
+                    typeColor = '#FF9F43';
+                }
+                if (task.taskType === 'больничный') {
+                    typeIcon = '🏥';
+                    typeColor = '#FF6B6B';
+                }
+                
+                const startDate = new Date(task.startTime);
+                const formattedDate = startDate.toLocaleDateString('ru-RU');
+                const formattedTime = startDate.toLocaleTimeString('ru-RU', { hour: '2-digit', minute: '2-digit' });
+                const endTime = new Date(task.endTime).toLocaleTimeString('ru-RU', { hour: '2-digit', minute: '2-digit' });
+                
+                row.innerHTML = `
+                    <td><strong>${task.taskName}</strong></td>
+                    <td>${task.subtaskName}</td>
+                    <td style="color: ${typeColor}; font-weight: 600;">${typeIcon} ${task.taskType}</td>
+                    <td>
+                        <div style="font-size: 0.9em; color: var(--gray-color);">
+                            ${formattedDate}
+                        </div>
+                        <div style="font-weight: 500;">
+                            ${formattedTime} - ${endTime}
+                        </div>
+                    </td>
+                    <td><span style="color: var(--primary-color); font-weight: 600;">${task.hoursSpent} ч</span></td>
+                    <td>👤 ${task.responsible}</td>
+                    <td>
+                        <button onclick="deleteTask('${task.timestamp}')" style="background: none; border: none; color: #FF6B6B; cursor: pointer; font-size: 18px; padding: 5px;" title="Удалить задачу">
+                            🗑️
+                        </button>
+                    </td>
+                `;
+                tbody.appendChild(row);
+            });
+            
+            // Обновляем счетчики
+            document.getElementById('total-tasks-count').textContent = taskList.length;
+            document.getElementById('filtered-tasks-count').textContent = taskList.length;
+            
+            // Скрываем сообщение "нет задач"
+            document.getElementById('no-tasks-message').style.display = 'none';
         }
 
-        // Обновленные функции с проверкой ролей
+        // Функции для работы с темами задач
         function addTaskTheme() {
-            if (currentUser.role !== 'editor') {
+            if (currentUser.role !== 'admin') {
                 showNotification('Недостаточно прав для добавления тем задач', 'error');
                 return;
             }
@@ -1725,7 +2183,7 @@
         }
 
         function removeTaskTheme(index) {
-            if (currentUser.role !== 'editor') {
+            if (currentUser.role !== 'admin') {
                 showNotification('Недостаточно прав для удаления тем задач', 'error');
                 return;
             }
@@ -1738,220 +2196,6 @@
             showNotification('Тема удалена');
         }
 
-        function addResponsible() {
-            if (currentUser.role !== 'editor') {
-                showNotification('Недостаточно прав для добавления ответственных', 'error');
-                return;
-            }
-            
-            const input = document.getElementById('new-responsible');
-            const name = input.value.trim();
-            
-            if (name) {
-                if (responsibles.includes(name)) {
-                    showNotification('Такой ответственный уже существует!', 'error');
-                    return;
-                }
-                
-                responsibles.push(name);
-                updateResponsibleList();
-                updateResponsibleSelect();
-                updateResponsibleFilter();
-                updateTaskListFilters();
-                input.value = '';
-                saveData();
-                showNotification('Ответственный добавлен!');
-            } else {
-                showNotification('Введите имя ответственного!', 'error');
-            }
-        }
-
-        function removeResponsible(index) {
-            if (currentUser.role !== 'editor') {
-                showNotification('Недостаточно прав для удаления ответственных', 'error');
-                return;
-            }
-            
-            responsibles.splice(index, 1);
-            updateResponsibleList();
-            updateResponsibleSelect();
-            updateResponsibleFilter();
-            updateTaskListFilters();
-            saveData();
-            showNotification('Ответственный удален');
-        }
-
-        // Обновленная функция для отображения списка задач с учетом роли
-        function updateTaskTable() {
-            const tbody = document.querySelector('#task-table tbody');
-            tbody.innerHTML = '';
-            
-            if (taskList.length === 0) {
-                tbody.innerHTML = `
-                    <tr>
-                        <td colspan="${currentUser.role === 'editor' ? '7' : '6'}" style="text-align: center; padding: 40px; color: var(--gray-color);">
-                            Нет добавленных задач
-                        </td>
-                    </tr>
-                `;
-                
-                document.getElementById('task-list-counter').style.display = 'none';
-                document.getElementById('no-tasks-message').style.display = 'none';
-                
-                return;
-            }
-            
-            // Показываем счетчик
-            document.getElementById('task-list-counter').style.display = 'flex';
-            
-            // Обновляем фильтры
-            updateTaskListFilters();
-            
-            // Фильтруем задачи в зависимости от роли
-            let tasksToShow = [...taskList];
-            
-            if (currentUser.role === 'employee') {
-                // Сотрудник видит только свои задачи
-                tasksToShow = tasksToShow.filter(task => task.responsible === currentUser.name);
-            }
-            
-            // Сортируем задачи по дате (от новых к старым)
-            tasksToShow.sort((a, b) => new Date(b.startTime) - new Date(a.startTime));
-            
-            tasksToShow.forEach(task => {
-                const row = document.createElement('tr');
-                
-                // Иконка для типа задачи
-                let typeIcon = '🚀';
-                let typeColor = '#6C63FF';
-                if (task.taskType === 'рутина') {
-                    typeIcon = '🔄';
-                    typeColor = '#12C1D9';
-                }
-                if (task.taskType === 'созвон') {
-                    typeIcon = '📞';
-                    typeColor = '#2CC93C';
-                }
-                if (task.taskType === 'отпуск') {
-                    typeIcon = '🏖️';
-                    typeColor = '#FF9F43';
-                }
-                if (task.taskType === 'больничный') {
-                    typeIcon = '🏥';
-                    typeColor = '#FF6B6B';
-                }
-                
-                // Форматируем дату для отображения
-                const startDate = new Date(task.startTime);
-                const formattedDate = startDate.toLocaleDateString('ru-RU');
-                const formattedTime = startDate.toLocaleTimeString('ru-RU', { hour: '2-digit', minute: '2-digit' });
-                
-                let actionsCell = '';
-                if (currentUser.role === 'editor') {
-                    actionsCell = `
-                        <td>
-                            <button onclick="deleteTask('${task.timestamp}')" style="background: none; border: none; color: #FF6B6B; cursor: pointer; font-size: 18px; padding: 5px;" title="Удалить задачу">
-                                🗑️
-                            </button>
-                        </td>
-                    `;
-                }
-                
-                row.innerHTML = `
-                    <td><strong>${task.taskName}</strong></td>
-                    <td>${task.subtaskName}</td>
-                    <td style="color: ${typeColor}; font-weight: 600;">${typeIcon} ${task.taskType}</td>
-                    <td>
-                        <div style="font-size: 0.9em; color: var(--gray-color);">
-                            ${formattedDate}
-                        </div>
-                        <div style="font-weight: 500;">
-                            ${formattedTime} - ${new Date(task.endTime).toLocaleTimeString('ru-RU', { hour: '2-digit', minute: '2-digit' })}
-                        </div>
-                    </td>
-                    <td><span style="color: var(--primary-color); font-weight: 600;">${task.hoursSpent} ч</span></td>
-                    <td>👤 ${task.responsible}</td>
-                    ${actionsCell}
-                `;
-                tbody.appendChild(row);
-            });
-            
-            // Обновляем счетчики и применяем фильтры
-            filterTaskList();
-        }
-
-        // Вспомогательные функции
-        function showNotification(message, type = 'success') {
-            const notification = document.getElementById('notification');
-            notification.textContent = message;
-            notification.style.borderLeftColor = type === 'success' ? '#2CC93C' : '#FF6B6B';
-            notification.classList.add('show');
-            
-            setTimeout(() => {
-                notification.classList.remove('show');
-            }, 3000);
-        }
-
-        function showTab(tabId) {
-            // Проверка доступа для сотрудника
-            if (currentUser.role === 'employee') {
-                showNotification('Доступ запрещен для сотрудников', 'error');
-                return;
-            }
-            
-            // Скрываем все вкладки
-            document.querySelectorAll('.tab-content').forEach(tab => {
-                tab.style.display = 'none';
-            });
-            
-            // Показываем выбранную вкладку
-            document.getElementById(tabId).style.display = 'block';
-            
-            // Обновляем активную кнопку
-            document.querySelectorAll('.tab-button').forEach(button => {
-                button.classList.remove('active');
-            });
-            
-            // Находим кнопку по содержимому
-            const tabButtons = document.querySelectorAll('.tab-button');
-            tabButtons.forEach(button => {
-                if (button.textContent.includes(tabId === 'task-themes' ? 'Темы задач' :
-                                               tabId === 'responsible-section' ? 'Ответственные' :
-                                               tabId === 'add-task' ? 'Добавить задачу' :
-                                               tabId === 'task-list' ? 'Список задач' : 'Дэшборд')) {
-                    button.classList.add('active');
-                }
-            });
-            
-            // Если открываем дэшборд, обновляем его
-            if (tabId === 'dashboard') {
-                updateDashboard();
-            }
-        }
-
-        // Установка режима просмотра
-        function setViewMode(mode) {
-            viewMode = mode;
-            
-            // Обновляем активные кнопки
-            document.querySelectorAll('.view-toggle-btn').forEach(btn => {
-                btn.classList.remove('active');
-            });
-            event.currentTarget.classList.add('active');
-            
-            // Показываем/скрываем соответствующий вид
-            document.getElementById('calendar-view').style.display = mode === 'calendar' ? 'block' : 'none';
-            document.getElementById('list-view').style.display = mode === 'list' ? 'block' : 'none';
-            
-            // Обновляем данные для выбранного режима
-            if (mode === 'calendar') {
-                updateCalendar();
-            } else {
-                updateDaysList();
-            }
-        }
-
-        // Функции для работы с темами задач
         function updateTaskThemesList() {
             const list = document.getElementById('task-themes-list');
             list.innerHTML = '';
@@ -1985,58 +2229,7 @@
             });
         }
 
-        // Функции для работы с ответственными
-        function updateResponsibleList() {
-            const list = document.getElementById('responsible-list');
-            list.innerHTML = '';
-            
-            if (responsibles.length === 0) {
-                list.innerHTML = '<li style="color: var(--gray-color); text-align: center;">Нет добавленных ответственных</li>';
-                return;
-            }
-            
-            responsibles.forEach((name, index) => {
-                const li = document.createElement('li');
-                li.innerHTML = `
-                    👤 ${name}
-                    <button onclick="removeResponsible(${index})" style="background: none; border: none; color: #FF6B6B; cursor: pointer; font-size: 18px;">
-                        ×
-                    </button>
-                `;
-                list.appendChild(li);
-            });
-        }
-
-        function updateResponsibleSelect() {
-            const select = document.getElementById('responsible-select');
-            select.innerHTML = '<option value="">Выберите ответственного</option>';
-            
-            responsibles.forEach(name => {
-                const option = document.createElement('option');
-                option.value = name;
-                option.textContent = name;
-                select.appendChild(option);
-            });
-        }
-
-        function updateResponsibleFilter() {
-            const select = document.getElementById('responsible-filter');
-            const currentValue = select.value;
-            select.innerHTML = '<option value="">Все сотрудники</option>';
-            
-            responsibles.forEach(name => {
-                const option = document.createElement('option');
-                option.value = name;
-                option.textContent = name;
-                select.appendChild(option);
-            });
-            
-            select.value = currentValue;
-        }
-
-        // Функция для обновления фильтров в списке задач
         function updateTaskListFilters() {
-            // Обновляем фильтр тем задач
             const themeFilter = document.getElementById('list-task-theme-filter');
             const currentTheme = themeFilter.value;
             themeFilter.innerHTML = '<option value="">Все темы</option>';
@@ -2050,22 +2243,112 @@
             
             themeFilter.value = currentTheme || '';
             
-            // Обновляем фильтр ответственных
             const responsibleFilter = document.getElementById('list-responsible-filter');
             const currentResponsible = responsibleFilter.value;
             responsibleFilter.innerHTML = '<option value="">Все сотрудники</option>';
             
-            responsibles.forEach(name => {
+            // Добавляем инициальных пользователей
+            Object.keys(INITIAL_USERS).forEach(key => {
+                if (key !== 'admin') {
+                    const user = INITIAL_USERS[key];
+                    const option = document.createElement('option');
+                    option.value = user.fio;
+                    option.textContent = user.fio;
+                    responsibleFilter.appendChild(option);
+                }
+            });
+            
+            // Добавляем сотрудников из базы
+            employees.forEach(employee => {
                 const option = document.createElement('option');
-                option.value = name;
-                option.textContent = name;
+                option.value = employee.fio;
+                option.textContent = employee.fio;
                 responsibleFilter.appendChild(option);
             });
             
             responsibleFilter.value = currentResponsible || '';
         }
 
-        // Функция для фильтрации списка задач
+        // Функция добавления задачи администратором
+        function addTask() {
+            if (currentUser.role !== 'admin') {
+                showNotification('Недостаточно прав', 'error');
+                return;
+            }
+            
+            const taskName = document.getElementById('task-name').value;
+            const responsible = document.getElementById('responsible-select').value;
+            const subtaskName = document.getElementById('subtask-name').value;
+            const comment = document.getElementById('comment').value;
+            const taskType = document.getElementById('task-type').value;
+            const startTime = document.getElementById('start-time').value;
+            const endTime = document.getElementById('end-time').value;
+
+            if (!taskName || !responsible || !startTime || !endTime) {
+                showNotification('Заполните все обязательные поля!', 'error');
+                return;
+            }
+
+            const start = new Date(startTime);
+            const end = new Date(endTime);
+            
+            if (end <= start) {
+                showNotification('Время окончания должно быть позже времени начала!', 'error');
+                return;
+            }
+
+            const timeSpent = Math.round((end - start) / 1000 / 60);
+
+            const task = {
+                taskName,
+                responsible,
+                subtaskName: subtaskName || '-',
+                comment: comment || '-',
+                taskType,
+                startTime: start.toLocaleString('ru-RU'),
+                endTime: end.toLocaleString('ru-RU'),
+                timeSpent,
+                hoursSpent: (timeSpent / 60).toFixed(2),
+                date: start.toISOString().split('T')[0],
+                month: start.getMonth(),
+                year: start.getFullYear(),
+                week: getWeekNumber(start),
+                timestamp: Date.now()
+            };
+
+            taskList.push(task);
+            updateTaskTable();
+            updateDashboard();
+            saveData();
+            
+            document.getElementById('subtask-name').value = '';
+            document.getElementById('comment').value = '';
+            document.getElementById('start-time').value = '';
+            document.getElementById('end-time').value = '';
+            
+            showNotification('Задача успешно добавлена!');
+        }
+
+        // Функция удаления задачи
+        function deleteTask(timestamp) {
+            if (currentUser.role !== 'admin') {
+                showNotification('Недостаточно прав для удаления задач', 'error');
+                return;
+            }
+            
+            if (confirm('Вы уверены, что хотите удалить эту задачу?')) {
+                const index = taskList.findIndex(task => task.timestamp == timestamp);
+                if (index !== -1) {
+                    taskList.splice(index, 1);
+                    updateTaskTable();
+                    updateDashboard();
+                    saveData();
+                    showNotification('Задача удалена');
+                }
+            }
+        }
+
+        // Функции фильтрации списка задач
         function filterTaskList() {
             const themeFilter = document.getElementById('list-task-theme-filter').value;
             const responsibleFilter = document.getElementById('list-responsible-filter').value;
@@ -2079,7 +2362,6 @@
             const totalTasksCount = document.getElementById('total-tasks-count');
             const filteredTasksCount = document.getElementById('filtered-tasks-count');
             
-            // Сначала показываем все задачи
             const rows = Array.from(tbody.querySelectorAll('tr'));
             let visibleCount = 0;
             
@@ -2093,17 +2375,14 @@
                 
                 let shouldShow = true;
                 
-                // Фильтр по теме
                 if (themeFilter && taskTheme !== themeFilter) {
                     shouldShow = false;
                 }
                 
-                // Фильтр по ответственному
                 if (responsibleFilter && !responsible.includes(responsibleFilter)) {
                     shouldShow = false;
                 }
                 
-                // Фильтр по типу задачи
                 if (taskTypeFilter) {
                     const typeText = taskType.toLowerCase();
                     if (!typeText.includes(taskTypeFilter.toLowerCase())) {
@@ -2111,7 +2390,6 @@
                     }
                 }
                 
-                // Фильтр по дате
                 if (dateFilter) {
                     const now = new Date();
                     const today = new Date(now.getFullYear(), now.getMonth(), now.getDate());
@@ -2159,7 +2437,6 @@
                     }
                 }
                 
-                // Поиск по всем полям
                 if (searchFilter) {
                     const searchText = (taskTheme + subtask + taskType + timeInfo + responsible).toLowerCase();
                     if (!searchText.includes(searchFilter)) {
@@ -2167,7 +2444,6 @@
                     }
                 }
                 
-                // Показываем/скрываем строку
                 if (shouldShow) {
                     row.style.display = '';
                     visibleCount++;
@@ -2176,11 +2452,9 @@
                 }
             });
             
-            // Обновляем счетчики
             totalTasksCount.textContent = rows.length;
             filteredTasksCount.textContent = visibleCount;
             
-            // Показываем сообщение, если нет задач
             if (visibleCount === 0 && rows.length > 0) {
                 noTasksMessage.style.display = 'block';
                 tbody.style.display = 'none';
@@ -2189,13 +2463,11 @@
                 tbody.style.display = '';
             }
             
-            // Сортировка
             if (visibleCount > 0) {
                 sortTaskListRows(sortFilter);
             }
         }
 
-        // Функция для сортировки задач
         function sortTaskListRows(sortType) {
             const tbody = document.querySelector('#task-table tbody');
             const rows = Array.from(tbody.querySelectorAll('tr:not([style*="display: none"])'));
@@ -2210,35 +2482,32 @@
                 
                 switch(sortType) {
                     case 'newest':
-                        // Для сортировки по дате нужно извлечь дату из строки
                         const dateA = new Date(timeA.split('.').reverse().join('-'));
                         const dateB = new Date(timeB.split('.').reverse().join('-'));
-                        return dateB - dateA; // Сначала новые
+                        return dateB - dateA;
                         
                     case 'oldest':
                         const dateA2 = new Date(timeA.split('.').reverse().join('-'));
                         const dateB2 = new Date(timeB.split('.').reverse().join('-'));
-                        return dateA2 - dateB2; // Сначала старые
+                        return dateA2 - dateB2;
                         
                     case 'hours_desc':
-                        return hoursB - hoursA; // Больше часов
+                        return hoursB - hoursA;
                         
                     case 'hours_asc':
-                        return hoursA - hoursB; // Меньше часов
+                        return hoursA - hoursB;
                         
                     case 'name':
-                        return taskThemeA.localeCompare(taskThemeB); // По алфавиту
+                        return taskThemeA.localeCompare(taskThemeB);
                         
                     default:
                         return 0;
                 }
             });
             
-            // Переставляем строки в отсортированном порядке
             rows.forEach(row => tbody.appendChild(row));
         }
 
-        // Функция сброса фильтров
         function resetTaskListFilters() {
             document.getElementById('list-task-theme-filter').value = '';
             document.getElementById('list-responsible-filter').value = '';
@@ -2250,91 +2519,10 @@
             filterTaskList();
         }
 
-        // Функции для работы с задачами
-        function addTask() {
-            const taskName = document.getElementById('task-name').value;
-            const responsible = document.getElementById('responsible-select').value;
-            const subtaskName = document.getElementById('subtask-name').value;
-            const comment = document.getElementById('comment').value;
-            const taskType = document.getElementById('task-type').value;
-            const startTime = document.getElementById('start-time').value;
-            const endTime = document.getElementById('end-time').value;
-
-            // Валидация
-            if (!taskName || !responsible || !startTime || !endTime) {
-                showNotification('Заполните все обязательные поля!', 'error');
-                return;
-            }
-
-            const start = new Date(startTime);
-            const end = new Date(endTime);
-            
-            if (end <= start) {
-                showNotification('Время окончания должно быть позже времени начала!', 'error');
-                return;
-            }
-
-            const timeSpent = Math.round((end - start) / 1000 / 60); // Время в минутах
-
-            const task = {
-                taskName,
-                responsible,
-                subtaskName: subtaskName || '-',
-                comment: comment || '-',
-                taskType,
-                startTime: start.toLocaleString('ru-RU'),
-                endTime: end.toLocaleString('ru-RU'),
-                timeSpent,
-                hoursSpent: (timeSpent / 60).toFixed(2),
-                date: start.toISOString().split('T')[0],
-                month: start.getMonth(),
-                year: start.getFullYear(),
-                week: getWeekNumber(start),
-                timestamp: start.getTime()
-            };
-
-            taskList.push(task);
-            updateTaskTable();
-            updateDashboard();
-            saveData();
-            
-            // Очистка формы
-            document.getElementById('subtask-name').value = '';
-            document.getElementById('comment').value = '';
-            document.getElementById('start-time').value = '';
-            document.getElementById('end-time').value = '';
-            
-            showNotification('Задача успешно добавлена!');
-        }
-
-        // Функция для получения номера недели
-        function getWeekNumber(date) {
-            const firstDayOfYear = new Date(date.getFullYear(), 0, 1);
-            const pastDaysOfYear = (date - firstDayOfYear) / 86400000;
-            return Math.ceil((pastDaysOfYear + firstDayOfYear.getDay() + 1) / 7);
-        }
-
-        // Функция удаления задачи
-        function deleteTask(timestamp) {
-            if (currentUser.role !== 'editor') {
-                showNotification('Недостаточно прав для удаления задач', 'error');
-                return;
-            }
-            
-            if (confirm('Вы уверены, что хотите удалить эту задачу?')) {
-                const index = taskList.findIndex(task => task.timestamp == timestamp);
-                if (index !== -1) {
-                    taskList.splice(index, 1);
-                    updateTaskTable();
-                    updateDashboard();
-                    saveData();
-                    showNotification('Задача удалена');
-                }
-            }
-        }
-
         // Основная функция обновления дэшборда
         function updateDashboard() {
+            if (currentUser.role !== 'admin') return;
+            
             updateTotalStats();
             updateTaskStats();
             updateFilterIndicator();
@@ -2346,7 +2534,6 @@
             }
         }
 
-        // Функция обновления индикатора фильтров
         function updateFilterIndicator() {
             const responsibleFilter = document.getElementById('responsible-filter').value;
             const taskTypeFilter = document.getElementById('task-type-filter').value;
@@ -2390,10 +2577,8 @@
             const taskTypeFilter = document.getElementById('task-type-filter').value;
             const periodFilter = document.getElementById('period-filter').value;
             
-            // Очистка календаря
             calendar.innerHTML = '';
             
-            // Заголовки дней недели
             const daysOfWeek = ['Пн', 'Вт', 'Ср', 'Чт', 'Пт', 'Сб', 'Вс'];
             daysOfWeek.forEach(day => {
                 const header = document.createElement('div');
@@ -2402,7 +2587,6 @@
                 calendar.appendChild(header);
             });
             
-            // Получение даты для отображения
             const now = new Date();
             let year, month;
             
@@ -2423,12 +2607,9 @@
                     month = now.getMonth();
             }
             
-            // Первый день месяца
             const firstDay = new Date(year, month, 1);
-            // Последний день месяца
             const lastDay = new Date(year, month + 1, 0);
             
-            // Пустые ячейки в начале месяца
             const firstDayOfWeek = firstDay.getDay() === 0 ? 6 : firstDay.getDay() - 1;
             for (let i = 0; i < firstDayOfWeek; i++) {
                 const empty = document.createElement('div');
@@ -2437,25 +2618,20 @@
                 calendar.appendChild(empty);
             }
             
-            // Ячейки с днями
             for (let day = 1; day <= lastDay.getDate(); day++) {
                 const dateStr = `${year}-${String(month + 1).padStart(2, '0')}-${String(day).padStart(2, '0')}`;
                 const dayCell = document.createElement('div');
                 dayCell.className = 'calendar-day';
                 dayCell.dataset.date = dateStr;
                 
-                // Проверяем, выбран ли этот день
                 if (selectedDate === dateStr) {
                     dayCell.classList.add('selected');
                 }
                 
-                // Собираем задачи для этого дня с учетом фильтров
                 const dayTasks = getFilteredTasksForDate(dateStr, responsibleFilter, taskTypeFilter, periodFilter, now);
                 
-                // Подсчет часов для этого дня
                 let totalHours = dayTasks.reduce((sum, task) => sum + parseFloat(task.hoursSpent), 0);
                 
-                // Индикаторы типов задач для этого дня
                 const taskTypes = {};
                 dayTasks.forEach(task => {
                     taskTypes[task.taskType] = true;
@@ -2476,20 +2652,17 @@
                     ${totalHours > 0 ? `<div class="hours-indicator" style="width: ${Math.min(totalHours * 10, 100)}%"></div>` : ''}
                 `;
                 
-                // Добавляем обработчик клика
                 dayCell.onclick = function() {
                     selectDate(dateStr);
                     showDayDetails(dateStr);
                 };
                 
-                // Подсветка сегодняшнего дня
                 const currentDate = new Date();
                 if (day === currentDate.getDate() && month === currentDate.getMonth() && year === currentDate.getFullYear()) {
                     dayCell.style.borderColor = 'var(--secondary-color)';
                     dayCell.style.boxShadow = '0 2px 8px rgba(44, 201, 60, 0.2)';
                 }
                 
-                // Подсветка дней с задачами
                 if (dayTasks.length > 0) {
                     dayCell.style.background = 'linear-gradient(135deg, #ffffff 0%, #f8fdff 100%)';
                     dayCell.style.borderColor = 'var(--primary-color)';
@@ -2499,22 +2672,14 @@
             }
         }
 
-        // Функция для получения отфильтрованных задач по дате
         function getFilteredTasksForDate(dateStr, responsibleFilter, taskTypeFilter, periodFilter, now) {
             return taskList.filter(task => {
-                // Фильтр по дате
                 if (task.date !== dateStr) return false;
                 
-                // Для сотрудника показываем только его задачи
-                if (currentUser.role === 'employee' && task.responsible !== currentUser.name) return false;
-                
-                // Фильтр по ответственному
                 if (responsibleFilter && task.responsible !== responsibleFilter) return false;
                 
-                // Фильтр по типу задачи
                 if (taskTypeFilter && task.taskType !== taskTypeFilter) return false;
                 
-                // Фильтр по периоду
                 switch(periodFilter) {
                     case 'current_month':
                         return task.month === now.getMonth() && task.year === now.getFullYear();
@@ -2532,23 +2697,19 @@
             });
         }
 
-        // Выбор даты
         function selectDate(dateStr) {
             selectedDate = dateStr;
             
-            // Снимаем выделение со всех дней
             document.querySelectorAll('.calendar-day').forEach(day => {
                 day.classList.remove('selected');
             });
             
-            // Выделяем выбранный день
             const selectedDay = document.querySelector(`.calendar-day[data-date="${dateStr}"]`);
             if (selectedDay) {
                 selectedDay.classList.add('selected');
             }
         }
 
-        // Показать детали дня
         function showDayDetails(dateStr) {
             const dayDetails = document.getElementById('day-details');
             const responsibleFilter = document.getElementById('responsible-filter').value;
@@ -2556,7 +2717,6 @@
             const periodFilter = document.getElementById('period-filter').value;
             const now = new Date();
             
-            // Получаем задачи для этого дня
             const dayTasks = getFilteredTasksForDate(dateStr, responsibleFilter, taskTypeFilter, periodFilter, now);
             
             if (dayTasks.length === 0) {
@@ -2631,18 +2791,12 @@
             const periodFilter = document.getElementById('period-filter').value;
             const now = new Date();
             
-            // Получаем уникальные даты из отфильтрованных задач
             const dateMap = {};
             
             taskList.forEach(task => {
-                // Для сотрудника показываем только его задачи
-                if (currentUser.role === 'employee' && task.responsible !== currentUser.name) return;
-                
-                // Применяем фильтры
                 if (responsibleFilter && task.responsible !== responsibleFilter) return;
                 if (taskTypeFilter && task.taskType !== taskTypeFilter) return;
                 
-                // Фильтр по периоду
                 switch(periodFilter) {
                     case 'current_month':
                         if (!(task.month === now.getMonth() && task.year === now.getFullYear())) return;
@@ -2685,14 +2839,12 @@
                 return;
             }
             
-            // Сортируем даты по убыванию (от новых к старым)
             const sortedDates = Object.keys(dateMap).sort((a, b) => new Date(b) - new Date(a));
             
             sortedDates.forEach(date => {
                 const data = dateMap[date];
                 const row = document.createElement('tr');
                 
-                // Формируем список типов задач
                 let typesHTML = '';
                 data.types.forEach(type => {
                     const badgeClass = getBadgeClass(type);
@@ -2734,7 +2886,6 @@
             const periodFilter = document.getElementById('period-filter').value;
             const now = new Date();
             
-            // Получаем задачи для этого дня
             const dayTasks = getFilteredTasksForDate(dateStr, responsibleFilter, taskTypeFilter, periodFilter, now);
             
             if (dayTasks.length === 0) {
@@ -2818,28 +2969,6 @@
             return days[date.getDay()];
         }
 
-        function getBadgeClass(taskType) {
-            switch(taskType) {
-                case 'проект': return 'badge-project';
-                case 'рутина': return 'badge-routine';
-                case 'созвон': return 'badge-meeting';
-                case 'отпуск': return 'badge-vacation';
-                case 'больничный': return 'badge-sick';
-                default: return 'badge-project';
-            }
-        }
-
-        function getTypeIcon(taskType) {
-            switch(taskType) {
-                case 'проект': return '🚀';
-                case 'рутина': return '🔄';
-                case 'созвон': return '📞';
-                case 'отпуск': return '🏖️';
-                case 'больничный': return '🏥';
-                default: return '🚀';
-            }
-        }
-
         // Функция для обновления итоговой статистики
         function updateTotalStats() {
             const totalStats = document.getElementById('total-stats');
@@ -2847,18 +2976,11 @@
             const taskTypeFilter = document.getElementById('task-type-filter').value;
             const periodFilter = document.getElementById('period-filter').value;
             
-            // Фильтруем задачи
             const filteredTasks = taskList.filter(task => {
-                // Для сотрудника показываем только его задачи
-                if (currentUser.role === 'employee' && task.responsible !== currentUser.name) return false;
-                
-                // Фильтр по ответственному
                 if (responsibleFilter && task.responsible !== responsibleFilter) return false;
                 
-                // Фильтр по типу задачи
                 if (taskTypeFilter && task.taskType !== taskTypeFilter) return false;
                 
-                // Фильтр по периоду
                 const now = new Date();
                 switch(periodFilter) {
                     case 'current_month':
@@ -2879,10 +3001,8 @@
             const totalHours = filteredTasks.reduce((sum, task) => sum + parseFloat(task.hoursSpent), 0);
             const totalTasks = filteredTasks.length;
             
-            // Среднее время на задачу
             const avgTimePerTask = totalTasks > 0 ? (totalHours / totalTasks).toFixed(1) : 0;
             
-            // Самый продуктивный день
             let mostProductiveDay = { date: '', hours: 0 };
             const dayStats = {};
             
@@ -2927,18 +3047,11 @@
             const taskTypeFilter = document.getElementById('task-type-filter').value;
             const periodFilter = document.getElementById('period-filter').value;
             
-            // Фильтруем задачи
             const filteredTasks = taskList.filter(task => {
-                // Для сотрудника показываем только его задачи
-                if (currentUser.role === 'employee' && task.responsible !== currentUser.name) return false;
-                
-                // Фильтр по ответственному
                 if (responsibleFilter && task.responsible !== responsibleFilter) return false;
                 
-                // Фильтр по типу задачи
                 if (taskTypeFilter && task.taskType !== taskTypeFilter) return false;
                 
-                // Фильтр по периоду
                 const now = new Date();
                 switch(periodFilter) {
                     case 'current_month':
@@ -2966,7 +3079,6 @@
                 return;
             }
             
-            // Статистика по типам задач
             const types = {
                 'проект': { count: 0, hours: 0, icon: '🚀', color: '#6C63FF' },
                 'рутина': { count: 0, hours: 0, icon: '🔄', color: '#12C1D9' },
@@ -2982,10 +3094,8 @@
                 }
             });
             
-            // Формирование статистики
             let statsHTML = '';
             
-            // Добавляем карточки для каждого типа задач, где есть данные
             Object.entries(types).forEach(([type, data]) => {
                 if (data.count > 0) {
                     const percentage = ((data.hours / filteredTasks.reduce((sum, t) => sum + parseFloat(t.hoursSpent), 0)) * 100).toFixed(1);
@@ -3003,6 +3113,65 @@
             });
             
             statsContainer.innerHTML = statsHTML;
+        }
+
+        // Установка режима просмотра
+        function setViewMode(mode) {
+            viewMode = mode;
+            
+            document.querySelectorAll('.view-toggle-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            event.currentTarget.classList.add('active');
+            
+            document.getElementById('calendar-view').style.display = mode === 'calendar' ? 'block' : 'none';
+            document.getElementById('list-view').style.display = mode === 'list' ? 'block' : 'none';
+            
+            if (mode === 'calendar') {
+                updateCalendar();
+            } else {
+                updateDaysList();
+            }
+        }
+
+        // Вспомогательные функции
+        function showNotification(message, type = 'success') {
+            const notification = document.getElementById('notification');
+            notification.textContent = message;
+            notification.style.borderLeftColor = type === 'success' ? '#2CC93C' : '#FF6B6B';
+            notification.classList.add('show');
+            
+            setTimeout(() => {
+                notification.classList.remove('show');
+            }, 3000);
+        }
+
+        function getWeekNumber(date) {
+            const firstDayOfYear = new Date(date.getFullYear(), 0, 1);
+            const pastDaysOfYear = (date - firstDayOfYear) / 86400000;
+            return Math.ceil((pastDaysOfYear + firstDayOfYear.getDay() + 1) / 7);
+        }
+
+        function getBadgeClass(taskType) {
+            switch(taskType) {
+                case 'проект': return 'badge-project';
+                case 'рутина': return 'badge-routine';
+                case 'созвон': return 'badge-meeting';
+                case 'отпуск': return 'badge-vacation';
+                case 'больничный': return 'badge-sick';
+                default: return 'badge-project';
+            }
+        }
+
+        function getTypeIcon(taskType) {
+            switch(taskType) {
+                case 'проект': return '🚀';
+                case 'рутина': return '🔄';
+                case 'созвон': return '📞';
+                case 'отпуск': return '🏖️';
+                case 'больничный': return '🏥';
+                default: return '🚀';
+            }
         }
     </script>
 </body>
